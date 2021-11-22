@@ -1,0 +1,54 @@
+footer{
+    max-width: 375px;
+    margin: auto;
+    height: 14vh;
+    display: grid;
+    grid-template-areas: "container";
+        .container-footer{
+            align-self: flex-end;
+            display: grid;
+            grid-template-areas: "derechos redes";
+            color: var(--blanco);
+            
+            
+            .container-footer__derechos{
+                margin: auto;
+                p{
+                    font-weight: 300;
+                    font-size: .6rem;
+                    opacity: .5;
+                }
+            }
+            .container-footer__redes{
+               
+                justify-self: end;
+                img{
+                    width: 1.5rem;
+                    margin-left: 1rem;
+                    opacity: .7;
+                }
+            }
+        }
+    }
+
+
+
+@media screen and (min-width:1024px) {
+    footer{
+        max-width: 1440px;
+        margin: auto;
+        .container-footer{
+            display: flex;
+            justify-content: space-between;
+            .container-footer__redes{
+               margin: auto;
+                justify-self: end;
+                img{
+                    
+                    margin-left: 2rem;
+                    
+                }
+            }
+        }
+    }
+}

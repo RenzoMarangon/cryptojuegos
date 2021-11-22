@@ -1,0 +1,42 @@
+main{
+    .container-guias{
+        
+        max-width: 1440px;
+        margin: 7rem auto;
+        display: flex;
+        flex-wrap: wrap;
+        
+        .container-guias__iframe{
+            margin: 1rem auto;
+            border-top: solid .5rem var(--violeta);
+            width: 100%;
+            
+        
+            
+            border-radius: 1rem;
+            margin: auto;
+            iframe{
+                width: 100%;
+                height: 240px;
+                border-radius: 1rem;
+            }
+        }
+        
+    }
+}
+
+@media screen and (min-width:1024px) {
+    main{
+        .container-guias{
+            
+            .container-guias__iframe{
+                margin: 1rem 3rem 1rem 0;
+                width: 30%;
+                iframe{
+                    height: 240px;
+                }
+            }
+        }
+    }
+}
+

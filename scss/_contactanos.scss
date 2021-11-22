@@ -1,0 +1,200 @@
+main{
+    .main-contactanos{
+            display: grid;
+            grid-template-areas: "form contacto" ;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: 1fr;
+            margin: 9rem 0;
+            .main-form{
+                
+                grid-area: form;
+                display: grid;
+                grid-template-areas: "mensaje mensaje" "input1 input2" "input3 input4" "textarea textarea" "input5 input5";
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: repeat(5,1fr);
+                width: 40%;
+                height: 10vh;
+                grid-gap: 1rem .5rem;
+                .main-form__h2{
+                    grid-area:mensaje;
+                    font-weight: lighter;
+                    font-size: 1.8rem;
+                }
+        
+                .main-form__input{
+                    opacity: .9;
+                    justify-self: start;
+                    width: 12rem;
+                    height:2.5rem;
+                    border-radius: 1rem;
+                    outline: none;
+                    border:none;
+                    padding: 0 1rem;
+                    background: hsla(0, 0%, 100%, 0.801);
+                    transition: all .1s;
+    
+                    &:focus{
+                        transition: all .1s;
+                        outline: thin solid var(--fucsia) ;
+                        
+                    }
+                }
+    
+                
+        
+                .main-form__textarea{
+                    opacity: .9;
+                    width: 100%;
+                    height: 10rem;
+                    grid-area:textarea;
+                    border-radius: 1rem;
+                    padding: 1rem;
+                    resize: none;
+                    outline: none;
+                    background: hsla(0, 0%, 100%, 0.801);
+    
+                    &:focus{
+                        transition: all .1s;
+                        outline: thin solid var(--fucsia) ;
+                    }
+                }
+                
+                .main-form__input_5{
+                    height:3rem;
+                    margin:1rem auto;
+                    background: var(--fucsia);
+                    color: #fff;
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                    cursor: pointer;
+                    border-radius: 1.5rem;
+                    transition: all .5s;
+                    
+                }
+                .main-form__input_5:hover{
+                    transition: all .5s;
+                    transform: scale(1.1);
+                    outline: none;
+                }
+    
+                @for $i from 1 through 5{
+                    .main-form__input_#{$i}{
+                        grid-area: input#{$i};
+                        
+                    }
+                }
+            }
+    
+            .main-contacto{
+                justify-self: end;
+                grid-area: contacto;
+                display: flex;
+                flex-direction: column;
+                .main-contacto__h3{
+                    font-size: 2.25rem;
+                    font-weight: lighter;
+                    margin-bottom: 2rem;
+                }
+    
+                .main-contacto__mail{
+                    display: flex;
+                    margin-bottom: 1rem;
+                    p{
+                        margin:auto 1rem;
+                        font-size: 1.12rem;
+                        font-weight: lighter;
+                    }
+                }
+    
+                .main-contacto__whp{
+                    display: flex;
+                    margin-bottom: 1rem;
+                    p{
+                        margin:auto 1rem;
+                        font-size: 1.12rem;
+                        font-weight: lighter;
+                    }
+                }
+                
+                .main-contacto__tel{
+                    display: flex;
+                    margin-bottom: 1rem;
+                    p{
+                        margin:auto 1rem;
+                        font-size: 1.12rem;
+                        font-weight: lighter;
+                    }
+                }
+            }
+    
+            .main-redes{
+                margin-top: 2rem;
+    
+                .main-redes__h3{
+                    font-weight: lighter;
+                    font-size: 2.25rem;
+                }
+    
+                .footer-redes__logos{
+                    display: flex;
+                    
+                    
+                    img{
+                        width: 2.5rem;
+                        margin-top: 1rem;
+                    }
+    
+                    .footer-redes__logos-twitter{
+                        margin-top: .4rem;
+                        margin-left: 1rem;
+                    }
+    
+                    .footer-redes__logos-instagram{
+                        margin-left: 1rem;
+                    }
+                }
+            }
+        } 
+}
+
+@media screen and (max-width:900px) {
+    main{
+        .main-contactanos{
+            
+            width: 375px;
+            grid-template-areas:"form" "contacto";
+            grid-template-columns: 1fr;
+            grid-template-rows: 2fr;
+            margin:.5rem;
+
+            .main-form{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                margin: 2rem auto;
+
+                .main-form__input{
+                    width: 98%;
+                    border-radius: .3rem;
+                }
+
+                .main-form__textarea{
+                    border-radius: .3rem;
+                    width: 98%;
+                }
+            }
+
+            .main-redes{
+                margin:2rem auto -8rem auto;
+                width: 100%;
+                
+                .footer-redes__logos{
+                    justify-content: space-between;
+                }
+            }
+        }
+
+    
+    }
+}

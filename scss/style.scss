@@ -1,0 +1,373 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;500&family=Red+Hat+Mono:wght@400;500&display=swap');@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;500&display=swap');
+@import "variables";
+@import "contactanos";
+@import "juegos";
+@import "precios";
+@import "guias";
+@import "footer";
+
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Mitr', sans-serif;
+}
+
+
+body{
+    //background: linear-gradient(116.73deg, #06052B 2.68%, #50165F 139.99%);
+    background-image: url(../img/Fondex.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header{
+    
+   
+    height: 1vh;
+
+    .header-logo{
+        width: 375px;
+        display: flex;
+        margin:1rem auto;
+       
+        color: var(--blanco);
+        .header-logo__link{
+            text-decoration: none;
+            display: flex;
+            color: var(--blanco);
+
+            img{
+                margin: auto .5rem;
+                width: 4rem;
+            }
+    
+            h1{
+                margin: auto .5rem;
+                font-size: 1.5rem;
+                letter-spacing: .3rem;
+                
+            }
+        }
+
+        span{
+            margin: auto;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    }
+
+    .header-lista{
+        position: fixed;
+        height: 100vh;
+        width:100vh;
+        background-color: var(--violeta);
+        z-index: 1;
+        
+
+        .header-lista__ul{
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+
+            li{
+                margin:1rem 0;
+                border-radius: .5rem;
+                border-bottom: solid var(--fucsiaTransparente) .1rem;
+                box-shadow: 6px 6px 10px -9px rgba(0,0,0,0.75);
+                -webkit-box-shadow: 6px 6px 10px -9px rgba(0,0,0,0.75);
+                -moz-box-shadow: 6px 6px 10px -9px rgba(0,0,0,0.75);                
+                
+                a{
+                    margin: auto 1rem;
+                    text-decoration: none;
+                    color: var(--blanco);
+                    font-size: 1.2rem;
+                }
+            
+            }
+        }
+
+        
+    }
+}
+
+.mostrar__header-lista-ul{
+    clip-path: circle(150% at 100% 0);
+    transition: all 1s ease;
+}
+
+.ocultar__header-lista-ul{
+    clip-path: circle(0% at 100% 0);
+    transition: all 1s ease;
+}
+
+main{
+    max-width: 375px;
+    
+    color: var(--blanco);
+    margin:7rem auto;
+    color:#fff;
+    
+    
+    .main-container{
+        margin: auto;
+        .main-container__texto{
+            
+            margin: auto;
+
+            h2{
+                margin: auto;
+                letter-spacing: .5rem;
+                text-align: center;
+            }
+
+            
+            
+        }
+
+        .main-container__botones{
+            grid-area:botones;
+            
+            display:flex;
+            flex-direction: column;
+           
+            a{
+                color: #fff;
+                text-decoration: none;
+                font-weight: 300;
+            }
+
+            .main-container__botones__juegos{
+                background-color:var(--fucsia) ;
+                width: 100%;
+                height: 3rem;
+                border-radius: 2.63rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin:1rem auto;
+                
+            }
+
+
+            .main-container__botones__informacion{
+                border:.2rem solid var(--fucsia);
+                width: 100%;
+                height: 3rem;
+                border-radius: 2.63rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 1rem auto;
+               
+                
+            }
+
+            
+        }
+
+        .main-container__imagen{
+            transform: translateY(-20rem);
+            height: 27vh;
+            left: 20%;
+            
+            z-index: -1;
+            img{
+                width: 20rem;
+                opacity: .3;
+                
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width:900px) {
+    header{
+        max-width: 1440px;
+        height: 5vh;
+        display: grid;
+        grid-template-areas: "logo lista";
+        grid-template-columns: 2fr;
+        grid-template-rows: 1fr;
+        
+        .header-logo{
+            margin: 1rem auto;
+            grid-area: logo;
+           
+            span{
+                display: none;
+            }
+    
+            a{
+                text-decoration: none;
+                display: flex;
+                color:#fff;
+                
+    
+                img{
+                    margin:.5rem 0;
+                    width:4rem;
+                    height: 4rem;
+                    transition: all .5s;
+                }
+    
+                img:hover{
+                    transition: all .5s;
+                    transform: scale(1.1);
+                }
+        
+                h1{
+                    margin: auto 1rem;
+                    font-size: 1.5rem;
+                    font-family: 'Red Hat Mono', monospace;
+                    font-weight: 400;
+                } 
+            }
+        }
+    
+        .header-lista{
+            position: static;
+            width: 100%;
+            height: 100%;
+            grid-area: lista;
+           
+            
+            background:transparent;
+            .header-lista__ul{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                
+                li{
+                    margin-left: 2rem;
+                    list-style: none;
+                    transition: all .5s;
+                    border: none;
+                    a{
+                        margin: auto;
+                        text-decoration: none;
+                        color:#fff;
+                        font-size: 1.125rem;
+                        font-weight: 300;
+                        
+                    }
+
+                }
+    
+                :hover{
+                    transition: all .5s;
+                    transform: scale(1.1);
+                    
+                }
+            }
+        }
+    }
+    
+    main{
+        max-width: 1440px;
+        height: 55vh;
+        .main-container{
+            display: grid;
+            grid-template-areas:
+            "texto ... imagen" 
+            "texto ... imagen" 
+            "botones ... imagen";
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,1fr);
+            background-image: none;
+          
+    
+            .main-container__texto{
+                
+                grid-area: texto;
+                align-self: center;
+                justify-self: center;
+    
+                text-align: left;
+                
+                
+                h2{
+                    font-size: 4.75rem;
+                    font-weight: 500;
+                    margin:2rem 0;
+                    
+                    
+                }
+                p{width: 110%;
+                    font-size: 1.4rem;
+                    font-weight: 300;
+                    margin:-1rem 0;
+                }
+            }
+            .main-container__botones{
+                grid-area:botones;
+                
+               margin: 2rem 0;
+                flex-direction: row;
+                
+               
+                a{
+                    color: #fff;
+                    text-decoration: none;
+                    font-weight: 300;
+                    
+                }
+    
+                .main-container__botones__juegos{
+                    width: 12rem;
+                    height: 3rem;
+                    cursor:pointer;
+                    transition: all .5s;
+
+                    
+                }
+    
+                .main-container__botones__juegos:hover{
+                    transition: all .5s;
+                    transform: scale(1.1);
+                }
+                .main-container__botones__informacion{
+
+                    width: 12rem;
+                    margin-left: 1rem;
+                    cursor:pointer;
+                    transition: all .5s;
+                    
+                }
+                .main-container__botones__informacion:hover{
+                    transition: all .5s;
+                    transform: scale(1.1);
+                }
+                
+            }
+    
+            .main-container__imagen{
+                display: block;
+                position: static;
+                grid-area:imagen;
+                opacity: 1;
+                position: static;
+                transform: none;
+                img{
+                   margin: auto;
+                   width: 30rem;
+                }
+            }
+        }
+    }
+    .mostrar__header-lista-ul{
+        clip-path: none;
+      
+    }
+    
+    .ocultar__header-lista-ul{
+        clip-path: none;
+        
+    }
+}
+

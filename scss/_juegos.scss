@@ -1,0 +1,52 @@
+.contenedor-juegos{
+    max-width: 1440px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 100%;
+    margin: 6rem auto;
+    
+
+    
+    
+    .contenedor-juegos__caja{
+        position: relative;
+        transition: all .5s;
+        margin: 1rem;
+        img{
+            
+            width: 100%;
+            margin: auto;
+            border-top: solid var(--violeta) .5rem;
+            border-radius: 1rem;
+        }
+
+        .contenedor-juegos__h3{
+            display: none;
+        }
+
+       
+    }
+
+
+    .contenedor-juegos__caja:hover{
+        transition: all .5s;
+        transform: scale(1.05);
+    }
+    
+}
+
+@media screen and (min-width:900px) {
+    .contenedor-juegos{
+        .contenedor-juegos__caja{
+            margin:1rem auto;
+            img{
+                
+                width: 80%;
+            }
+        }
+    }
+
+    
+}
